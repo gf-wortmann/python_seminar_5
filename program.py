@@ -1,24 +1,22 @@
-# Задача 26:  Напишите программу, которая на вход принимает два числа A и B,
-# и возводит число А в целую степень B с помощью рекурсии.
+# Задача 28: Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел.
+# Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
 #
 # *Пример:*
 #
-#  A = 3; B = 5 -> 243 (3⁵)
-#  A = 2; B = 3 -> 8
+# 2 2
+#     4
 
 x, y = input('enter 2 numbers: ').split()
 x = int(x)
 y = int(y)
 
 
-def power_recursive(a, b, c=1):
-    if b == 1:
+def sum_recursive(a, b):
+    if b == 0:
         return a
     else:
-        if c == 1:
-            c = a
-        a *= c
-        return power_recursive(a, b - 1, c)
+        a += 1
+        return sum_recursive(a, b - 1)
 
 
-print(power_recursive(x, y))
+print(sum_recursive(x, y))
